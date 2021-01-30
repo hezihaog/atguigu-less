@@ -1,0 +1,46 @@
+/* 这是想暴露出去的注释 */
+//这是见不得人的注释
+
+//定义变量，用@开头来定义变量，使用时，也要用@开头来引用
+@color: deeppink;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#wrap {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  border: 1px solid;
+  margin: 0 auto;
+
+  .inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: @color;
+    height: 100px;
+    width: 100px;
+
+    //&前缀，这个选择器的层级和它上一层是平级关系，如果不加，则为父子关系，:hover伪类是不起效果的
+    /*
+    - 不加&
+      * #wrap .inner :hover {
+        background: pink;
+      }
+
+    - 加了&
+      #wrap .inner:hover {
+        background: pink;
+      }
+    */
+    &:hover {
+      background: pink;
+    }
+  }
+}
