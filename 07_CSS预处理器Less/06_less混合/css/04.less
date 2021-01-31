@@ -1,0 +1,11 @@
+//@arguments，类似js中的方法中的arguments对象
+//将传入的参数，都转到border下
+.border(@w,@style,@c) {
+  //一个个传，麻烦
+  //border: @w @style @c;
+  border: @arguments;
+}
+
+#wrap > .sjx {
+  .border(1px, solid, black)
+}
