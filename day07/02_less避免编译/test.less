@@ -1,0 +1,8 @@
+* {
+  margin: 100-10px;
+  //浏览器有cacl计算功能，less进行编译后，会变成：padding: cacl(200px);
+  //我们不想less帮我们计算，希望原封不动，就要避免less编译这个语句，语法~"cacl(计算表达式)"
+  //结果：padding: cacl(100px+100);
+  //padding: cacl(100px+100);
+  padding: ~"cacl(100px+100)";
+}
